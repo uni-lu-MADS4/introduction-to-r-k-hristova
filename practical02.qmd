@@ -13,7 +13,7 @@ format: html
 c("A","B","C")
 
 ```
-> Your answer as text
+> created an object with no assigned name
 
 
 
@@ -39,18 +39,17 @@ c(my_letters , my_letters)
 
 ```
 
-> Your answer as text
+> It appends the two vectors to eachother: "A" "B" "C" "A" "B" "C"
 
 
 
 * Add the number 1 to letters. What happens to the type of the vector?
 ```{r}
-# Your answer in code
-
-
+letters + 1
+typeof(letters)
 ```
 
-> Your answer as text
+> It's not possible to possible to execute the operation, so the type doesn't change
 
 
 
@@ -62,14 +61,14 @@ c(my_letters , my_letters)
 3. Add the vector containing 1, 2, 3, 4 to `my_vec`. What do you observe?
 
 ```{r}
-# Your answer in code
-
-
-
+my_vec <- 1:8
+my_vec + 2
+my_vec + c(1:4)
 
 
 ```
 
+> After the initiation iof the vector, adding +2 increases each value in the vector by two. When adding the second vector to it (c(1:4)), the values are added together in the order of [1][1], [2][2], [3][3], [4][4], and then reused for [5][1], [6][2], [7][3], [8][4].
 
 
 ### Exercise 3
@@ -92,20 +91,22 @@ c(my_letters , my_letters)
 7. Compute the transpose of `A`
 
 ```{r}
-# Your answer in code
-
-
-
-
-
+A <- matrix(1:6, nrow = 3, ncol = 2) 
+dim(A)
+A[3,1] #the fifth element in the matrix
+A[A = 5] #the element with value 5
+cbind(A, c(0,0,0))
+A[A = 4] <- 0 #modifying the element with value 4 
+A[2,2] <- #modifying the fourth element 
+t(A)
 
 ```
 
 
 8. Are any values in `A` larger than 10? 
 ```{r}
-# Your answer in code
-
+A[A > 10] 
+# i haven't reassigned A after any of the operations, so the original values 1:6 haven't changed
 ```
 
 9. Are all values in `A` smaller than 10?
