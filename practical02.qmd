@@ -10,7 +10,7 @@ format: html
 * Create a vector of the letters A, B and C.
 
 ```{r}
-# Your answer in code
+c("A","B","C")
 
 ```
 > Your answer as text
@@ -19,25 +19,23 @@ format: html
 
 * Assign the vector to a variable `my_letters`
 ```{r}
-# Your answer in code
-
+my_letters <- c("A","B","C")
 ```
 
 
 * Check the what happens when you run `letters` (just this) on the command line.
 ```{r}
-# Your answer in code
+letters
 
 ```
 
-> Your answer as text
+> The output shows the full alphabet
 
 
 
 * What happens when you concatenate two vectors? Add `c(my_letters , my_letters)`
 ```{r}
-# Your answer in code
-
+c(my_letters , my_letters)
 
 ```
 
