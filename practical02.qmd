@@ -91,13 +91,13 @@ my_vec + c(1:4)
 7. Compute the transpose of `A`
 
 ```{r}
-A <- matrix(1:6, nrow = 3, ncol = 2) 
+A <- matrix(c(4,1,9,5,10,7), nrow = 3, ncol = 2) 
 dim(A)
 A[3,1] #the fifth element in the matrix
 A[A = 5] #the element with value 5
 cbind(A, c(0,0,0))
 A[A = 4] <- 0 #modifying the element with value 4 
-A[2,2] <- #modifying the fourth element 
+A[2,2] <- 0 #modifying the fourth element 
 t(A)
 
 ```
@@ -106,13 +106,13 @@ t(A)
 8. Are any values in `A` larger than 10? 
 ```{r}
 A[A > 10] 
-# i haven't reassigned A after any of the operations, so the original values 1:6 haven't changed
+# no, we don't even have a 10 as we've already replaced the 10 when we modified the fourth element
 ```
 
 9. Are all values in `A` smaller than 10?
 ```{r}
-# Your answer in code
-
+all(A < 10)
+# yes, this line returns TRUE
 ```
 
 ### Exercise 4
@@ -120,11 +120,9 @@ A[A > 10]
 1. Create a function that sums up two values even if provided as characters values
 
 ```{r}
-# Your answer in code
-
-
-
-
+sum_vals <- function(x,y) {
+  as.numeric(x) + as.numeric(y)
+}
 
 ```
 
@@ -134,9 +132,7 @@ A[A > 10]
 1. Create a function that returns the mean, median and standard deviation.
 
 ```{r}
-# Your answer in code
-
-
+m_m_sd <- function(x) c(mean(x),median(x),sd(x))
 
 ```
 
@@ -146,9 +142,7 @@ A[A > 10]
 The output of `c('1' , "a", NA, "2", NA)` should be 2.
 
 ```{r}
-# Your answer in code
-
-
+na_counter <- function(x) sum(is.na(x))
 
 ```
 
